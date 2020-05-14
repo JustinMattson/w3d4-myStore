@@ -23,86 +23,127 @@
         <div class="col-12"></div>
       </div>
     </header>
-    <main class="container">
+    <main class="container-fluid">
       <!-- INLINE FORM ROW -->
       <div class="row">
-        <div class="col-12">
-          <form
-            class="form-inline"
-            onsubmit="app.chopsticksController.addItem(event)"
-          >
-            <div class="form-group">
-              <label for="title">Item Title</label>
-              <input
-                type="text"
-                class="form-control"
-                name="title"
-                id="title"
-                aria-describedby="title"
-                placeholder="Title..."
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="description">Description</label>
-              <input
-                type="text"
-                class="form-control"
-                name="description"
-                id="description"
-                aria-describedby="description"
-                placeholder="Description..."
-              />
-            </div>
-            <div class="form-group">
-              <label for="imgUrl">Image Url</label>
-              <input
-                type="url"
-                class="form-control"
-                name="imgUrl"
-                id="imgUrl"
-                aria-describedby="imgUrl"
-                placeholder="Image Url..."
-                required
-              />
-            </div>
-            <button type="submit" class="btn btn-outline-success ml-3">
-              Submit
-            </button>
-          </form>
-        </div>
+        <div class="col-12"></div>
       </div>
 
-      <!-- STORE ITEM AREA -->
       <div class="row">
-        <!-- ITEM TEMPATE BEGIN -->
-        <div class="col-6 d-flex justify-content-center mt-3">
-          <div class="card shadow">
-            <img
-              id="itemImageUrl"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSK1vM06QaNrJH8NsykCaEPPW5Lxwt9MsoprqxstVGbpi-VPWjF&usqp=CAU"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 id="itemTitle" class="card-title">
-                Uni Japanese Chopstick Set - White
-              </h5>
-              <p id="itemDescription" class="card-text">
-                Enjoy your favourite Asian delicacies with this Uni Japanese
-                chopstick set from Christofle. Crafted from wood with silver
-                plated bases.
-              </p>
-              <button
-                class="btn btn-outline-primary"
-                onclick="apps.chopsticksController.toCart(itemID)"
+        <!-- STORE ITEM AREA -->
+        <div class="col-8 border text-center">
+          <h1>Store</h1>
+          <div class="row">
+            <div class="col-12">
+              <form
+                class="form-inline"
+                onsubmit="app.chopsticksController.addItem(event)"
               >
-                Add
-              </button>
+                <div class="form-group">
+                  <label for="title">Item Title</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="title"
+                    id="title"
+                    aria-describedby="title"
+                    placeholder="Title..."
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="description">Description</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="description"
+                    id="description"
+                    aria-describedby="description"
+                    placeholder="Description..."
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="imgUrl">Image Url</label>
+                  <input
+                    type="url"
+                    class="form-control"
+                    name="imgUrl"
+                    id="imgUrl"
+                    aria-describedby="imgUrl"
+                    placeholder="Image Url..."
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-outline-success ml-3">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+          <div id="chopsticks" class="row">
+            <!-- ITEM TEMPATE BEGIN -->
+            <div class="col-3 d-flex justify-content-center mt-3">
+              <div class="card shadow">
+                <img
+                  id="itemImageUrl"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSK1vM06QaNrJH8NsykCaEPPW5Lxwt9MsoprqxstVGbpi-VPWjF&usqp=CAU"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 id="itemTitle" class="card-title">
+                    Uni Japanese Chopstick Set - White
+                  </h5>
+                  <p id="itemDescription" class="card-text">
+                    Enjoy your favourite Asian delicacies with this Uni Japanese
+                    chopstick set from Christofle. Crafted from wood with silver
+                    plated bases.
+                  </p>
+                  <button
+                    class="btn btn-outline-primary"
+                    onclick="apps.chopsticksController.toCart(itemID)"
+                  >
+                    Add
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- ITEM TEMPLATE END -->
+          </div>
+        </div>
+        <!-- Cart section -->
+
+        <div class="col-4 text-center border">
+          <h1>Cart</h1>
+          <div id="purchases" class="col-6 d-flex justify-content-center mt-3">
+            <div class="card shadow">
+              <img
+                id="itemImageUrl"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSK1vM06QaNrJH8NsykCaEPPW5Lxwt9MsoprqxstVGbpi-VPWjF&usqp=CAU"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 id="itemTitle" class="card-title">
+                  Uni Japanese Chopstick Set - White
+                </h5>
+                <p id="itemDescription" class="card-text">
+                  Enjoy your favourite Asian delicacies with this Uni Japanese
+                  chopstick set from Christofle. Crafted from wood with silver
+                  plated bases.
+                </p>
+                <button
+                  class="btn btn-outline-primary"
+                  onclick="apps.chopsticksController.toCart(itemID)"
+                >
+                  Add
+                </button>
+              </div>
             </div>
           </div>
         </div>
-        <!-- ITEM TEMPLATE END -->
+        <!-- end of cart section -->
       </div>
     </main>
     <footer class="container-fluid">

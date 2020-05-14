@@ -37,7 +37,7 @@
             <div class="col-12">
               <form
                 class="form-inline"
-                onsubmit="app.chopsticksController.addItem(event)"
+                onsubmit="app.chopsticksController.addChopstick(event)"
               >
                 <div class="form-group">
                   <label for="title">Item Title</label>
@@ -46,6 +46,18 @@
                     class="form-control"
                     name="title"
                     id="title"
+                    aria-describedby="title"
+                    placeholder="Title..."
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="price">Price $</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="price"
+                    id="price"
                     aria-describedby="title"
                     placeholder="Title..."
                     required

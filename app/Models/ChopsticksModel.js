@@ -37,6 +37,8 @@ export default class ChopsticksModel {
         >
           Add
         </button>
+        <button class="btn btn-outline-danger"
+  onclick="app.chopsticksController.removeChopstick('${this.id}')">Remove</button>
       </div>
     </div>
   </div>

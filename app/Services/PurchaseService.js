@@ -3,10 +3,10 @@ import store from "../store.js";
 
 //Public
 class PurchaseService {
-  constructor() {
-
-
+  addToCart(id) {
+    store.addToCart();
   }
+  constructor() {}
 }
 
 console.log("hello from purchased service");

@@ -2,7 +2,8 @@ import ChopsticksModel from "./Models/ChopsticksModel.js";
 
 let _state = {
   /** @type {ChopsticksModel[]} */
-  chopsticksModels: [],
+  chopsticks: [],
+  purchases: [],
 };
 
 console.log("Hello from Store");

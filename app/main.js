@@ -1,9 +1,17 @@
-import ChopsticksController from "./Controllers/ChopsticksController.js";
+//import ChopsticksController from "./Controllers/ChopsticksController.js";
+
+import PurchaseController from "./Controllers/PurchaseController.js";
 
 class App {
-  chopsticksController = new ChopsticksController();
+
+  constructor() {
+    console.log("hello from main.js");
+    //chopsticksController = new ChopsticksController();
+    this.purchaseController = new PurchaseController()
+  }
+
+
 }
 
-console.log("hello from main.js");
 
 window["app"] = new App();

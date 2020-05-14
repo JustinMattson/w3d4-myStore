@@ -3,7 +3,7 @@ import { generateId } from "../Utils.js";
 console.log("hello from Chopsticks Model");
 export default class ChopsticksModel {
   constructor(data) {
-    this.id = data.id || generateId();
+    this.id = generateId();
     this.title = data.title;
     this.description = data.description;
     this.price = data.price;

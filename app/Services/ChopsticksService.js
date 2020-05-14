@@ -4,7 +4,7 @@ import store from "../store.js";
 //Public
 class ChopsticksService {
   constructor() {
-    this.model = new ChopsticksModel();
+    //this.model = new ChopsticksModel({});
   }
 }
 

@@ -1,5 +1,4 @@
 import ChopsticksController from "./Controllers/ChopsticksController.js";
-
 import PurchaseController from "./Controllers/PurchaseController.js";
 
 class App {

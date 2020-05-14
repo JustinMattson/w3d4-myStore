@@ -1,4 +1,4 @@
-import ChopsticksService from "../Services/ChopsticksService.js";
+import _chopsticksService from "../Services/ChopsticksService.js";
 import _store from "../store.js";
 
 function _draw() {

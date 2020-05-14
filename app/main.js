@@ -1,7 +1,9 @@
-import ValuesController from "./Controllers/ValuesController.js";
+import ChopsticksController from "./Controllers/ChopsticksController.js";
 
 class App {
-  valuesController = new ValuesController();
+  chopsticksController = new ChopsticksController();
 }
+
+console.log("hello from main.js");
 
 window["app"] = new App();

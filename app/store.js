@@ -1,10 +1,11 @@
-import Value from "./Models/Value.js";
+import ChopsticksModel from "./Models/ChopsticksModel.js";
 
 let _state = {
-  activeValue: new Value({ title: "Value" }),
-  /** @type {Value[]} */
-  values: []
+  /** @type {ChopsticksModel[]} */
+  chopsticksModels: [],
 };
+
+console.log("Hello from Store");
 
 class Store {
   /**

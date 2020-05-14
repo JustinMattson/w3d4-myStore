@@ -1,34 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/e48b493767.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Chopsticks R Us</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="assets/style.css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
-  <script src="https://kit.fontawesome.com/e48b493767.js" crossorigin="anonymous"></script>
-  <title>Chopsticks R Us</title>
-</head>
-
-<body>
-  <header class="container-fluid">
-    <div class="row d-flex bg-warning">
-      <div class="col-12">Chopsticks R Us</div>
-      <div class="col-12"></div>
-    </div>
-  </header>
-  <main class="container"></main>
-  <footer class="container-fluid">
-    <div class="row d-flex bg-warning">
-      <div class="col-12">
-        Coded with must frustration! By Micah, Chris, and Justin
+  <body>
+    <header class="container-fluid">
+      <div class="row d-flex bg-warning">
+        <div class="col-12">Chopsticks R Us</div>
+        <div class="col-12"></div>
       </div>
-      <div class="col-12"></div>
-    </div>
-  </footer>
+    </header>
+    <main class="container">
+      <!-- INLINE FORM ROW -->
+      <div class="row">
+        <div class="col-12">
+          <form
+            class="form-inline"
+            onsubmit="app.chopsticksController.addItem(event)"
+          >
+            <div class="form-group">
+              <label for="title">Item Title</label>
+              <input
+                type="text"
+                class="form-control"
+                name="title"
+                id="title"
+                aria-describedby="title"
+                placeholder="Title..."
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <input
+                type="text"
+                class="form-control"
+                name="description"
+                id="description"
+                aria-describedby="description"
+                placeholder="Description..."
+              />
+            </div>
+            <div class="form-group">
+              <label for="imgUrl">Image Url</label>
+              <input
+                type="url"
+                class="form-control"
+                name="imgUrl"
+                id="imgUrl"
+                aria-describedby="imgUrl"
+                placeholder="Image Url..."
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-outline-success ml-3">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
 
-  <script src="app/main.js" type="module"></script>
-</body>
+      <!-- STORE ITEM AREA -->
+      <div class="row">
+        <!-- ITEM TEMPATE BEGIN -->
+        <div class="col-3 d-flex justify-content-center mt-3">
+          <div class="card shadow">
+            <img
+              id="itemImageUrl"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSK1vM06QaNrJH8NsykCaEPPW5Lxwt9MsoprqxstVGbpi-VPWjF&usqp=CAU"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 id="itemTitle" class="card-title">
+                Uni Japanese Chopstick Set - White
+              </h5>
+              <p id="itemDescription" class="card-text">
+                Enjoy your favourite Asian delicacies with this Uni Japanese
+                chopstick set from Christofle. Crafted from wood with silver
+                plated bases.
+              </p>
+              <button
+                class="btn btn-outline-primary"
+                onclick="apps.chopsticksController.toCart(itemID)"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- ITEM TEMPLATE END -->
+      </div>
+    </main>
+    <footer class="container-fluid">
+      <div class="row d-flex bg-warning">
+        <div class="col-12">
+          Coded with must frustration! By Micah, Chris, and Justin
+        </div>
+        <div class="col-12"></div>
+      </div>
+    </footer>
 
+    <script src="app/main.js" type="module"></script>
+  </body>
 </html>

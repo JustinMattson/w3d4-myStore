@@ -1,10 +1,10 @@
 //import ChopsticksModel from "../Models/ChopsticksModel.js";
-import store from "../store.js";
+import _store from "../store.js";
 
 //Public
 class PurchaseService {
   addToCart(id) {
-    store.addToCart();
+    _store.addToCart(id);
   }
   constructor() {}
 }

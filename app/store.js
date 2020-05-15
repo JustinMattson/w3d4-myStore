@@ -36,6 +36,7 @@ class Store {
       return;
     }
     _state.purchases.push(_state.chopsticks[chopstickIndex]);
+    this.saveState();
   }
   removeChopstick(id) {
     let chopstickIndex = _state.chopsticks.findIndex((c) => c.id == id);
@@ -44,10 +45,12 @@ class Store {
       return;
     }
     _state.chopsticks.splice(chopstickIndex, 1);
+    this.saveState();
   }
   addChopstick(rawChopstick) {
     let chopstick = new ChopsticksModel(rawChopstick);
     _state.chopsticks.push(chopstick);
+    this.saveState();
   }
   /**
    * Provides access to application state data
@@ -55,37 +58,26 @@ class Store {
   get State() {
     return _state;
   }
+  // NOTE any change to the state should be followed by saveState
+  saveState() {
+    localStorage.setItem("chopsticks-r-us", JSON.stringify(_state));
+  }
 }
 
-// //NOTE this method will get the lists from local storage at the start of the app
-// function _loadState() {
-//   let data = JSON.parse(localStorage.getItem("chopsticks-r-us"));
-//   if (data) {
-//     // NOTE when data comes out of local storage all the data is POJOS
-//     // this step converts the objects back to "Chopsticks" type objects
-//     data.chopsticks = data.chopsticks.map(pojoChopstick => new Chopsticks(pojoChopstick))
-//     _state = data;
-//   }
+//NOTE this method will get the lists from local storage at the start of the app
+function _loadState() {
+  let data = JSON.parse(localStorage.getItem("chopsticks-r-us"));
+  if (data) {
+    // NOTE when data comes out of local storage all the data is POJOS
+    // this step converts the objects back to "Chopsticks" type objects
+    data.chopsticks = data.chopsticks.map(
+      (pojoChopstick) => new ChopsticksModel(pojoChopstick)
+    );
+    _state = data;
+  }
+}
 
-//   // NOTE any change to the state should be followed by saveState
-//   saveState() {
-//     localStorage.setItem("chopsticks-r-us", JSON.stringify(_state))
-//   }
-// That is from the pizza-planet store
-// ignore the previous 7 lines
-// here is the save function class Store {
-//   /**
-//    * Provides access to application state data
-//    */
-//   get State() {
-//     return _state;
-//   }
-
-//   // NOTE any change to the state should be followed by saveState
-//   saveState() {
-//     localStorage.setItem("chopsticks-r-us", JSON.stringify(_state))
-//   }
-// }
+_loadState();
 
 const STORE = new Store();
 export default STORE;

@@ -17,7 +17,7 @@ export default class ChopsticksModel {
     <div class="card shadow">
       <img
         id="itemImageUrl"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSK1vM06QaNrJH8NsykCaEPPW5Lxwt9MsoprqxstVGbpi-VPWjF&usqp=CAU"
+        src="${this.imgUrl}"
         class="card-img-top"
         alt="..."
       />

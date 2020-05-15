@@ -1,4 +1,4 @@
-import PurchaseService from "../Services/PurchaseService.js";
+import _purchaseService from "../Services/PurchaseService.js";
 import _store from "../store.js";
 
 function _draw() {
@@ -15,6 +15,8 @@ export default class PurchaseController {
   }
 
   addToCart(id) {
-    PurchaseService.addToCart();
+    let _chopstick = _store.State.chopsticks.find((c) => (c.id = id));
+    _purchaseService.addToCart(_chopstick);
+    _draw();
   }
 }

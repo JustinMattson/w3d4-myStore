@@ -10,7 +10,7 @@ export default class ChopsticksModel {
     this.imgUrl = data.imgUrl;
   }
 
-  get Template() {
+  get TemplateAddToStore() {
     return /*html*/ `
     <!-- ITEM TEMPATE BEGIN -->
     <div class="col-3 d-flex justify-content-center mt-3">

@@ -4,7 +4,7 @@ import _store from "../store.js";
 function _draw() {
   let chopsticks = _store.State.chopsticks;
   let template = "";
-  chopsticks.forEach((c) => (template += c.Template));
+  chopsticks.forEach((c) => (template += c.TemplateAddToStore));
   document.getElementById("chopsticks").innerHTML = template;
 }
 

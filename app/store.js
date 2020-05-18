@@ -3,7 +3,7 @@ import ChopsticksModel from "./Models/ChopsticksModel.js";
 let _state = {
   /** @type {ChopsticksModel[]} */
   chopsticks: [
-    /** @type {ChopsticksModel[] */
+    /** @type {ChopsticksModel[]} */
     new ChopsticksModel({
       id: "insert",
       title: "Uni Japanese Chopstick Set - White",
